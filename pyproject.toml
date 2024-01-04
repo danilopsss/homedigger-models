@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "hdmdata"
+version = "0.1.0"
+description = ""
+authors = ["Danilo Paes <danilo.paes@pm.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.7"
+pydantic = "^2.5.3"
+sqlalchemy = "^2.0.25"
+psycopg2 = "^2.9.9"
+
+
+[[tool.poetry.source]]
+name = "local"
+url = "http://192.168.1.222:9000/simple/"
+priority = "primary"
+
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
