@@ -5,7 +5,7 @@ from hdmdata.utils.conversions import Converter
 
 
 class AdvertisementsSchema(BaseSchema):
-    __orm_model__ = Users
+    __orm_model__ = Advertisements
 
     title: str
     price: int
