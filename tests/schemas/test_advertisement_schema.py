@@ -27,4 +27,4 @@ def test_rent_office_schema_conversion(advertisement_data_with_str_not_int):
     advert = AdvertisementsSchema(**advertisement_data_with_str_not_int)
     assert type(advert) == AdvertisementsSchema
     assert advert.size == 422
-    assert advert.price == 15464
+    assert advert.price == 550000

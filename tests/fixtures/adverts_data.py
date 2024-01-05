@@ -15,7 +15,7 @@ def advertisement_data():
 def advertisement_data_with_str_not_int():
     return {
         "title": "title",
-        "price": "15464",
+        "price": " 550.000€",
         "parking": True,
         "rooms": 1,
         "size": "422 m²",
