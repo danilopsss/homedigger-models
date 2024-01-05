@@ -1,6 +1,5 @@
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict
-from typing import Union, List, Optional
 from ._methods import save_model_to_db
 
 

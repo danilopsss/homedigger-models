@@ -1,12 +1,12 @@
 import pytest
 from pydantic import ValidationError
-from hdmdata.schemas.advertisements.advertisement_schema import AdvertisementsSchema
-from hdmdata.schemas.advertisements.rent_office_schema import RentOfficeSchema
+from hdmdata.schemas.advertisements import AdvertisementsSchema
+from hdmdata.schemas.advertisements import RentOfficeSchema
 
 
 def test_advertising_schema(advertisement_data):
-    user = AdvertisementsSchema(**advertisement_data)
-    assert type(user) == AdvertisementsSchema
+    rent_office = AdvertisementsSchema(**advertisement_data)
+    assert type(rent_office) == AdvertisementsSchema
 
     advertisement_data.pop("title")
     with pytest.raises(ValidationError) as ve:

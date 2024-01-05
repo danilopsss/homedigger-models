@@ -10,7 +10,7 @@ class RentOffice(BaseModel):
     link = Column(String(length=100), nullable=False)
     
     advertisements = relationship(
-       "advertisements.Advertisements", 
+       "Advertisements", 
         lazy=True,
         uselist=True,
         back_populates="rent_office",

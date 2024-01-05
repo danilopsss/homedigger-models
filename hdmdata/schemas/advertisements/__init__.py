@@ -1,0 +1,2 @@
+from .advertisement_schema import AdvertisementsSchema
+from .rent_office_schema import RentOfficeSchema
