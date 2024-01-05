@@ -23,6 +23,11 @@ class BaseSchema(BaseModel):
             if type(value) not in TYPES_TO_IGNORE:
                 orm_model = BaseSchema._build_orm_objects(getattr(data, key))
                 setattr(data, key, orm_model)
+            if isinstance(value, list):
+                orm_model = []
+                for item in value:
+                    orm_model.append(BaseSchema._build_orm_objects(item))
+                setattr(data, key, orm_model)
         return data.__orm_model__(**vars(data))
 
     @save_model_to_db
