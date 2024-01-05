@@ -13,12 +13,6 @@ psycopg2 = "^2.9.9"
 
 
 [[tool.poetry.source]]
-name = "local"
-url = "http://192.168.1.222:9000/simple/"
-priority = "primary"
-
-
-[[tool.poetry.source]]
 name = "PyPI"
 priority = "primary"
 
