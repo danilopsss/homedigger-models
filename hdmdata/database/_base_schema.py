@@ -12,7 +12,6 @@ class BaseSchema(BaseModel):
         from_attributes=True,
         str_strip_whitespace=True,
         arbitrary_types_allowed=True
-        # revalidate_instances='always'
     )
     
     @staticmethod
@@ -33,3 +32,6 @@ class BaseSchema(BaseModel):
     @save_model_to_db
     def save(self):
         return BaseSchema._build_orm_objects(self)      
+
+    def to_dbmodel(self):
+        return BaseSchema._build_orm_objects(self)
