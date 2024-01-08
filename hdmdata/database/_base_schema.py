@@ -32,3 +32,6 @@ class BaseSchema(BaseModel):
     @save_model_to_db
     def save(self):
         return BaseSchema._build_orm_objects(self)      
+
+    def to_dbmodel(self):
+        return BaseSchema._build_orm_objects(self)
