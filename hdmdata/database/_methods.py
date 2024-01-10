@@ -12,6 +12,7 @@ def save_model_to_db(function):
             session.commit()
         return data
 
+    return wrapper
 
 
 def get_by(*, schema, by: None | by_):
@@ -27,7 +28,9 @@ def get_by(*, schema, by: None | by_):
         if hasattr(query_by, "id"):
             return STANDARD_STMT.where(schema.__orm_model__.id == query_by.id)
         if hasattr(query_by, "name"):
-            return STANDARD_STMT.where(schema.__orm_model__.name == query_by.name)
+            return STANDARD_STMT.where(
+                schema.__orm_model__.name == query_by.name
+            )
 
 
 def get_model_from_db(function):

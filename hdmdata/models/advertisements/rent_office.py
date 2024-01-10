@@ -4,13 +4,17 @@ from hdmdata.database._base_model import BaseModel
 
 
 class RentOffice(BaseModel):
-    __table_args__ = (UniqueConstraint("title", "link"), {"schema": "homedigger"})
+    __tablename__ = "rent_office"
+    __table_args__ = (
+        UniqueConstraint("title", "link"),
+        {"schema": "homedigger"},
+    )
 
     title = Column(String(length=200), nullable=False)
     link = Column(String(length=100), nullable=False)
 
     advertisements = relationship(
-       "Advertisements", 
+        "Advertisements",
         lazy=True,
         uselist=True,
         back_populates="rent_office",

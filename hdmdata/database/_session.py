@@ -6,17 +6,19 @@ from sqlalchemy.orm import sessionmaker
 
 
 def __get_url():
-    return "%s://%s:%s@%s/%s" % (
-        os.environ.get("DB_PROVIDER", "postgresql"),
-        os.environ.get("DB_USER", "DB_USER"),
-        os.environ.get("DB_PASSWORD", "DB_PASSWORD"),
-        os.environ.get("DB_HOST", "localhost"),
-        os.environ.get("DB_DB", "DB_DB"),
+    return "%s://%s:%s@%s:%s/%s" % (
+        os.environ.get("DB_PROVIDER"),
+        os.environ.get("DB_USER"),
+        os.environ.get("DB_PASSWORD"),
+        os.environ.get("DB_HOST"),
+        os.environ.get("DB_PORT"),
+        os.environ.get("DB_DB"),
     )
+
 
 def __db_session():
     db_url = __get_url()
-    engine = sqlalchemy.create_engine(db_url)
+    engine = sqlalchemy.create_engine(db_url, echo=True)
     return sessionmaker(bind=engine, autoflush=True)()
 
 

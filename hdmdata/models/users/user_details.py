@@ -12,4 +12,6 @@ class UserDetails(BaseModel):
     email: String = Column(String(100), nullable=False, index=True, unique=True)
 
     user_id = Column(UUID, ForeignKey("user.id"))
-    user = relationship("Users", lazy=True, uselist=False, back_populates="details")
+    user = relationship(
+        "Users", lazy=True, uselist=False, back_populates="details"
+    )

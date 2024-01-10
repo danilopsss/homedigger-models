@@ -1,6 +1,8 @@
 from datetime import datetime
+from typing import Optional
 from pydantic import BaseModel, ConfigDict
-from ._methods import save_model_to_db
+from hdmdata.types.get_by_type import by_
+from ._methods import save_model_to_db, get_model_from_db
 
 
 TYPES_TO_IGNORE = (str, int, float, bool, datetime, list, None)
@@ -12,9 +14,9 @@ class BaseSchema(BaseModel):
     model_config = ConfigDict(
         from_attributes=True,
         str_strip_whitespace=True,
-        arbitrary_types_allowed=True
+        arbitrary_types_allowed=True,
     )
-    
+
     @staticmethod
     def _build_orm_objects(data):
         if not data:
@@ -35,7 +37,7 @@ class BaseSchema(BaseModel):
 
     @save_model_to_db
     def save(self):
-        return BaseSchema._build_orm_objects(self)      
+        return BaseSchema._build_orm_objects(self)
 
     @get_model_from_db
     def get(self, by: None | by_ = None):

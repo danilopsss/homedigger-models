@@ -10,4 +10,3 @@ class RentOfficeSchema(BaseSchema):
     title: str
     link: str
     advertisements: Optional[List[AdvertisementsSchema]] = None
-

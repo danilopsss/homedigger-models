@@ -12,4 +12,6 @@ class UserSecrets(BaseModel):
     personal_key: str = Column(String, nullable=False)
 
     user_id = Column(UUID, ForeignKey("user.id"))
-    user = relationship("Users", lazy=True, uselist=False, back_populates="secrets")
+    user = relationship(
+        "Users", lazy=True, uselist=False, back_populates="secrets"
+    )
