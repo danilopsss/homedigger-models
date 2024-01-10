@@ -11,4 +11,9 @@ class BaseModel:
 
     id = Column(UUID, primary_key=True, nullable=False, default=uuid4)
     created = Column(DateTime, nullable=False, default=datetime.utcnow)
-    updated = Column(DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
+    updated = Column(
+        DateTime,
+        nullable=False,
+        default=datetime.utcnow,
+        onupdate=datetime.utcnow,
+    )

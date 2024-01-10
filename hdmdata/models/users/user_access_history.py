@@ -15,4 +15,6 @@ class UserAccessHistory(BaseModel):
     user_agent: String = Column(String(100), nullable=False)
 
     user_id = Column(UUID, ForeignKey("user.id"))
-    user = relationship("Users", lazy=True, uselist=False, back_populates="access_history")
+    user = relationship(
+        "Users", lazy=True, uselist=False, back_populates="access_history"
+    )

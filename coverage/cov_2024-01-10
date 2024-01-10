@@ -1,0 +1,45 @@
+Name                                                     Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------------------
+hdmdata/__init__.py                                          0      0   100%
+hdmdata/database/__init__.py                                 2      0   100%
+hdmdata/database/_base_model.py                             11      0   100%
+hdmdata/database/_base_schema.py                            32      1    97%   36
+hdmdata/database/_methods.py                                30     10    67%   19-31
+hdmdata/database/_session.py                                14      0   100%
+hdmdata/models/__init__.py                                   0      0   100%
+hdmdata/models/advertisements/__init__.py                    2      0   100%
+hdmdata/models/advertisements/advertisements.py             15      0   100%
+hdmdata/models/advertisements/rent_office.py                 9      0   100%
+hdmdata/models/enums/__init__.py                             0      0   100%
+hdmdata/models/enums/events.py                               5      0   100%
+hdmdata/models/users/__init__.py                             4      0   100%
+hdmdata/models/users/user_access_history.py                 13      0   100%
+hdmdata/models/users/user_details.py                        11      0   100%
+hdmdata/models/users/user_secrets.py                        11      0   100%
+hdmdata/models/users/users_model.py                         10      0   100%
+hdmdata/schemas/__init__.py                                  0      0   100%
+hdmdata/schemas/advertisements/__init__.py                   2      0   100%
+hdmdata/schemas/advertisements/advertisement_schema.py      19      0   100%
+hdmdata/schemas/advertisements/rent_office_schema.py         9      0   100%
+hdmdata/schemas/users/__init__.py                            0      0   100%
+hdmdata/schemas/users/users_access_history.py               14      3    79%   16-18
+hdmdata/schemas/users/users_details_schema.py                8      0   100%
+hdmdata/schemas/users/users_schema.py                       12      0   100%
+hdmdata/schemas/users/users_secrets_schema.py                7      0   100%
+hdmdata/types/__init__.py                                    0      0   100%
+hdmdata/types/get_by_type.py                                 2      0   100%
+hdmdata/utils/__init__.py                                    0      0   100%
+hdmdata/utils/conversions.py                                 6      0   100%
+tests/__init__.py                                            0      0   100%
+tests/conftest.py                                            1      0   100%
+tests/fixtures/__init__.py                                   2      0   100%
+tests/fixtures/adverts_data.py                              10      0   100%
+tests/fixtures/user_data.py                                 11      0   100%
+tests/models/__init__.py                                     0      0   100%
+tests/models/test_advertisement_model.py                    30      0   100%
+tests/models/test_user_model.py                              9      0   100%
+tests/schemas/__init__.py                                    0      0   100%
+tests/schemas/test_advertisement_schema.py                  23      0   100%
+tests/schemas/test_user_schema.py                           14      0   100%
+--------------------------------------------------------------------------------------
+TOTAL                                                      348     14    96%
