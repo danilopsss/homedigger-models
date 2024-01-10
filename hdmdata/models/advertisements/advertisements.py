@@ -8,6 +8,7 @@ class Advertisements(BaseModel):
     __tablename__ = 'advertisements'
 
     title = Column(String(length=200), nullable=False)
+    link = Column(String(length=200), nullable=False)
     price = Column(Integer, nullable=False)
     parking = Column(Boolean, default=False)
     rooms = Column(Integer, nullable=False)

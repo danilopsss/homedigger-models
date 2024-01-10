@@ -8,6 +8,7 @@ class AdvertisementsSchema(BaseSchema):
     __orm_model__ = Advertisements
 
     title: str
+    link: str
     price: int
     parking: bool
     rooms: int
