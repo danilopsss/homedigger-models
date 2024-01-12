@@ -1,5 +1,7 @@
+import logging
 from ._session import get_session
 from sqlalchemy import select
+from sqlalchemy.exc import IntegrityError
 from hdmdata.types.get_by_type import by_
 
 
@@ -7,9 +9,14 @@ def save_model_to_db(function):
     def wrapper(*args, **kwargs):
         data = function(*args, **kwargs)
         with get_session() as session:
-            session.begin()
-            session.add(data)
-            session.commit()
+            try:
+                session.begin()
+                session.add(data)
+                session.commit()
+            except IntegrityError:
+                session.rollback()
+                session.close()
+                logging.warning("Duplicated entry, rolling back.")
         return data
 
     return wrapper
