@@ -1,2 +1,3 @@
-from .advertisement_schema import AdvertisementsSchema
-from .rent_office_schema import RentOfficeSchema
+from .advert_schema import AdvertisementsSchema
+from .rentoffice_schema import RentOfficeSchema
+from .mainlink_schema import AdvertisementsMainLinkSchema

@@ -6,6 +6,19 @@ from sqlalchemy.orm import sessionmaker
 
 
 def __get_url():
+    db_envvars = [
+        "DB_PROVIDER",
+        "DB_USER",
+        "DB_PASSWORD",
+        "DB_HOST",
+        "DB_PORT",
+        "DB_DB",
+    ]
+
+    for envvar in db_envvars:
+        if not os.environ.get(envvar):
+            raise ValueError(f"{envvar.split('_')[-1]} is not set")
+
     return "%s://%s:%s@%s:%s/%s" % (
         os.environ.get("DB_PROVIDER"),
         os.environ.get("DB_USER"),

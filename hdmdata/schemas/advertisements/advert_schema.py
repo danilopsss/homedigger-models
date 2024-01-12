@@ -1,7 +1,8 @@
 from pydantic import model_validator
-from hdmdata.models.advertisements import Advertisements
-from hdmdata.database._base_schema import BaseSchema
 from hdmdata.utils.conversions import Converter
+from hdmdata.utils.validators import has_valid_link
+from hdmdata.database._base_schema import BaseSchema
+from hdmdata.models.advertisements import Advertisements
 
 
 class AdvertisementsSchema(BaseSchema):
@@ -20,4 +21,10 @@ class AdvertisementsSchema(BaseSchema):
             value = self.get(attr)
             normalized_value = Converter.extract_number_from_string(value)
             self[attr] = normalized_value
+        return self
+
+    @model_validator(mode="before")
+    def validate_link(self):
+        if not has_valid_link(self.get("link", "")):
+            raise ValueError("Invalid link format")
         return self
