@@ -1,7 +1,7 @@
 """empty message
 
 Revision ID: f3e335cc74ff
-Revises: 
+Revises:
 Create Date: 2024-01-11 20:24:46.298746
 
 """
