@@ -11,7 +11,7 @@ def save_model_to_db(function):
         with get_session() as session:
             try:
                 session.begin()
-                session.add(data)
+                session.merge(data)
                 session.commit()
             except IntegrityError:
                 session.rollback()
