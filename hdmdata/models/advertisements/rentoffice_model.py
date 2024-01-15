@@ -18,4 +18,5 @@ class RentOffice(BaseModel):
         lazy=True,
         uselist=True,
         back_populates="rent_office",
+        cascade="merge",
     )
