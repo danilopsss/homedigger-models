@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hdmdata"
-version = "0.1.0a1"
+version = "1.0.0"
 description = ""
 authors = ["Danilo Paes <danilo.paes@pm.me>"]
 readme = "README.md"
