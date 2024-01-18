@@ -35,6 +35,7 @@ def get_by(*, schema, by: None | by_):
         return STANDARD_STMT.where(
             getattr(schema.__orm_model__, by.column) == by.value
         )
+    return STANDARD_STMT
 
 
 def get_model_from_db(function):

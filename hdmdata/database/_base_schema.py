@@ -30,7 +30,9 @@ class BaseSchema(BaseModel):
                 for item in value:
                     orm_model.append(BaseSchema._build_orm_objects(item))
                 setattr(data, key, orm_model)
-        return data.__orm_model__(**vars(data))
+        new_data = vars(data)
+        new_data.pop("__by__", None)
+        return data.__orm_model__(**new_data)
 
     def to_dbmodel(self):
         return BaseSchema._build_orm_objects(self)
