@@ -23,4 +23,4 @@ def upgrade() -> None:
 
 
 def downgrade() -> None:
-    ${"pass"}
+    ${downgrades if downgrades else "pass"}

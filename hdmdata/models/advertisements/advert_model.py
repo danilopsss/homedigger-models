@@ -21,6 +21,7 @@ class Advertisements(BaseModel):
             "parking",
             "rooms",
             "size",
+            "floor",
             "rent_office_id",
         ),
         {"schema": "homedigger"},
@@ -32,6 +33,7 @@ class Advertisements(BaseModel):
     parking = Column(Boolean, default=False)
     rooms = Column(Integer, nullable=False)
     size = Column(Integer, nullable=False)
+    floor = Column(Integer, nullable=False)
 
     rent_office_id = Column(UUID, ForeignKey("homedigger.rent_office.id"))
     rent_office = relationship(
