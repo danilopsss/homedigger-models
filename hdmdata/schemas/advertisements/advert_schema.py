@@ -38,7 +38,7 @@ class AdvertisementsSchema(BaseSchema):
     def extract_floor(self):
         floor = self.get("floor", "")
         ground_floor = re.compile(r"[bB]ajo", re.IGNORECASE)
-        if ground_floor.match(floor):
+        if ground_floor.match(str(floor)):
             self["floor"] = 0
         else:
             self["floor"] = Converter.extract_number_from_string(floor)
