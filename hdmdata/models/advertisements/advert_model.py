@@ -38,7 +38,7 @@ class Advertisements(BaseModel):
     rent_office_id = Column(UUID, ForeignKey("homedigger.rent_office.id"))
     rent_office = relationship(
         "RentOffice",
-        lazy=True,
+        lazy="subquery",
         uselist=False,
         back_populates="advertisements",
         cascade="merge",

@@ -32,7 +32,11 @@ def __get_url():
 def __db_session():
     db_url = __get_url()
     engine = sqlalchemy.create_engine(db_url, echo=True)
-    return sessionmaker(bind=engine, autoflush=True)()
+    return sessionmaker(
+        bind=engine,
+        autoflush=True,
+        expire_on_commit=False
+    )()
 
 
 @contextmanager

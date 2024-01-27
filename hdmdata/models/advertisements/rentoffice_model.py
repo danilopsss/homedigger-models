@@ -15,7 +15,7 @@ class RentOffice(BaseModel):
 
     advertisements = relationship(
         "Advertisements",
-        lazy=True,
+        lazy="subquery",
         uselist=True,
         back_populates="rent_office",
         cascade="merge",
