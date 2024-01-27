@@ -7,4 +7,4 @@ class Converter:
         extracted_int = "".join(re.findall(r"\d+", str(string)))
         if not extracted_int:
             extracted_int = 0
-        return int(extracted_int)
+        return int(str(extracted_int))
